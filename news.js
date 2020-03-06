@@ -2,6 +2,7 @@
 const articlesDiv = document.getElementById('articles');
 let btn = document.getElementById('newsButton');
 
+window.addEventListener("load", getNews);
 btn.addEventListener("click", getNews);
 
 function getNews(){
@@ -30,6 +31,7 @@ function getNews(){
 function formatArticle(obj){
     return `<article>
     <h3>${obj.source.name}</h3>
+    <img src="${obj.urlToImage}" />
     <a href="${obj.url}">${obj.title}</a>
     <p>${obj.description}</p>
     </article>`;
