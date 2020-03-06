@@ -22,9 +22,11 @@ function getNews(){
             return res.json();
         }).then(data => {
             console.log(data.articles);
+            let formattedArticles = data.articles.map(article => formatArticle(article));
+            articlesDiv.innerHTML = formattedArticles;
     });
 };
 
-function formatArticle(){
-    
+function formatArticle(obj){
+    return `<a href="${obj.url}">${obj.source.name}</a><p>${obj.title}</p>`;
 }
