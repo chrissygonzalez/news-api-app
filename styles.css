@@ -1,0 +1,19 @@
+body {
+    background-color: #eaeaea;
+    font-size: 16px;
+}
+
+article {
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 25px;
+    background-color: #fff;
+}
+
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 80%;
+    font-weight: normal;
+}

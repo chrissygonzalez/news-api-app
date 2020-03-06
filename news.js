@@ -22,11 +22,15 @@ function getNews(){
             return res.json();
         }).then(data => {
             console.log(data.articles);
-            let formattedArticles = data.articles.map(article => formatArticle(article));
+            let formattedArticles = data.articles.map(article => formatArticle(article)).join('');
             articlesDiv.innerHTML = formattedArticles;
     });
 };
 
 function formatArticle(obj){
-    return `<a href="${obj.url}">${obj.source.name}</a><p>${obj.title}</p>`;
+    return `<article>
+    <h3>${obj.source.name}</h3>
+    <a href="${obj.url}">${obj.title}</a>
+    <p>${obj.description}</p>
+    </article>`;
 }
